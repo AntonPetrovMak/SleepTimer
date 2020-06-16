@@ -8,10 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		2BA2DF182497E6EC009ED027 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA2DF172497E6EC009ED027 /* AppDelegate.swift */; };
-		2BA2DF1F2497E6EC009ED027 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BA2DF1D2497E6EC009ED027 /* Main.storyboard */; };
+		2BA2DF1F2497E6EC009ED027 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BA2DF1D2497E6EC009ED027 /* Home.storyboard */; };
 		2BA2DF212497E6EF009ED027 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BA2DF202497E6EF009ED027 /* Assets.xcassets */; };
 		2BA2DF242497E6EF009ED027 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BA2DF222497E6EF009ED027 /* LaunchScreen.storyboard */; };
 		2BA2DF2F2497E6EF009ED027 /* SleepTimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA2DF2E2497E6EF009ED027 /* SleepTimerTests.swift */; };
+		2BC662972497EDFB00494D65 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC662932497EDFB00494D65 /* HomeRouter.swift */; };
+		2BC662982497EDFB00494D65 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC662942497EDFB00494D65 /* HomeViewController.swift */; };
+		2BC662992497EDFB00494D65 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC662952497EDFB00494D65 /* HomeViewModel.swift */; };
+		2BC6629A2497EDFB00494D65 /* HomeConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC662962497EDFB00494D65 /* HomeConfigurator.swift */; };
+		2BC6629C2498B0E300494D65 /* STStoryboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC6629B2498B0E300494D65 /* STStoryboards.swift */; };
+		2BC662A12498B2D900494D65 /* SoundTimerOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC662A02498B2D900494D65 /* SoundTimerOption.swift */; };
+		2BC662A32498B42C00494D65 /* RecordingDurationOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC662A22498B42C00494D65 /* RecordingDurationOption.swift */; };
+		2BC662A52498B5E000494D65 /* HomeAppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC662A42498B5E000494D65 /* HomeAppState.swift */; };
+		2BC662A72498B5F200494D65 /* HomeButtomState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC662A62498B5F200494D65 /* HomeButtomState.swift */; };
+		2BC662AB2498B69900494D65 /* Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC662AA2498B69900494D65 /* Observer.swift */; };
+		2BC662AE2498B88C00494D65 /* HomeRows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC662AD2498B88C00494D65 /* HomeRows.swift */; };
+		2BC662B12498BBB200494D65 /* Int+Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC662B02498BBB200494D65 /* Int+Time.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,13 +39,25 @@
 /* Begin PBXFileReference section */
 		2BA2DF142497E6EC009ED027 /* SleepTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SleepTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BA2DF172497E6EC009ED027 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2BA2DF1E2497E6EC009ED027 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2BA2DF1E2497E6EC009ED027 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
 		2BA2DF202497E6EF009ED027 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2BA2DF232497E6EF009ED027 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2BA2DF252497E6EF009ED027 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2BA2DF2A2497E6EF009ED027 /* SleepTimerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SleepTimerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BA2DF2E2497E6EF009ED027 /* SleepTimerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepTimerTests.swift; sourceTree = "<group>"; };
 		2BA2DF302497E6EF009ED027 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2BC662932497EDFB00494D65 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		2BC662942497EDFB00494D65 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		2BC662952497EDFB00494D65 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		2BC662962497EDFB00494D65 /* HomeConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeConfigurator.swift; sourceTree = "<group>"; };
+		2BC6629B2498B0E300494D65 /* STStoryboards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STStoryboards.swift; sourceTree = "<group>"; };
+		2BC662A02498B2D900494D65 /* SoundTimerOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundTimerOption.swift; sourceTree = "<group>"; };
+		2BC662A22498B42C00494D65 /* RecordingDurationOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingDurationOption.swift; sourceTree = "<group>"; };
+		2BC662A42498B5E000494D65 /* HomeAppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAppState.swift; sourceTree = "<group>"; };
+		2BC662A62498B5F200494D65 /* HomeButtomState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeButtomState.swift; sourceTree = "<group>"; };
+		2BC662AA2498B69900494D65 /* Observer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observer.swift; sourceTree = "<group>"; };
+		2BC662AD2498B88C00494D65 /* HomeRows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRows.swift; sourceTree = "<group>"; };
+		2BC662B02498BBB200494D65 /* Int+Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Time.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +130,9 @@
 		2BA2DF3B2497E713009ED027 /* PresentationLayer */ = {
 			isa = PBXGroup;
 			children = (
+				2BC662AF2498BBA000494D65 /* Extensions */,
+				2BC662AA2498B69900494D65 /* Observer.swift */,
+				2BC662922497EA9300494D65 /* Home */,
 			);
 			path = PresentationLayer;
 			sourceTree = "<group>";
@@ -113,8 +140,9 @@
 		2BA2DF3C2497E729009ED027 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				2BA2DF1D2497E6EC009ED027 /* Main.storyboard */,
-				2BA2DF222497E6EF009ED027 /* LaunchScreen.storyboard */,
+				2BC6629B2498B0E300494D65 /* STStoryboards.swift */,
+				2BC6629E2498B1CF00494D65 /* Launch */,
+				2BC6629D2498B1BF00494D65 /* Home */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -129,8 +157,64 @@
 		2BA2DF3E2497E755009ED027 /* DomainLayer */ = {
 			isa = PBXGroup;
 			children = (
+				2BC6629F2498B29200494D65 /* Entities */,
 			);
 			path = DomainLayer;
+			sourceTree = "<group>";
+		};
+		2BC662922497EA9300494D65 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				2BC662AC2498B88200494D65 /* Models */,
+				2BC662932497EDFB00494D65 /* HomeRouter.swift */,
+				2BC662942497EDFB00494D65 /* HomeViewController.swift */,
+				2BC662952497EDFB00494D65 /* HomeViewModel.swift */,
+				2BC662962497EDFB00494D65 /* HomeConfigurator.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		2BC6629D2498B1BF00494D65 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				2BA2DF1D2497E6EC009ED027 /* Home.storyboard */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		2BC6629E2498B1CF00494D65 /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				2BA2DF222497E6EF009ED027 /* LaunchScreen.storyboard */,
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
+		2BC6629F2498B29200494D65 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				2BC662A02498B2D900494D65 /* SoundTimerOption.swift */,
+				2BC662A22498B42C00494D65 /* RecordingDurationOption.swift */,
+				2BC662A42498B5E000494D65 /* HomeAppState.swift */,
+				2BC662A62498B5F200494D65 /* HomeButtomState.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		2BC662AC2498B88200494D65 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2BC662AD2498B88C00494D65 /* HomeRows.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2BC662AF2498BBA000494D65 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2BC662B02498BBB200494D65 /* Int+Time.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,7 +300,7 @@
 			files = (
 				2BA2DF242497E6EF009ED027 /* LaunchScreen.storyboard in Resources */,
 				2BA2DF212497E6EF009ED027 /* Assets.xcassets in Resources */,
-				2BA2DF1F2497E6EC009ED027 /* Main.storyboard in Resources */,
+				2BA2DF1F2497E6EC009ED027 /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,6 +319,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				2BA2DF182497E6EC009ED027 /* AppDelegate.swift in Sources */,
+				2BC662A12498B2D900494D65 /* SoundTimerOption.swift in Sources */,
+				2BC662A52498B5E000494D65 /* HomeAppState.swift in Sources */,
+				2BC662972497EDFB00494D65 /* HomeRouter.swift in Sources */,
+				2BC662982497EDFB00494D65 /* HomeViewController.swift in Sources */,
+				2BC662A72498B5F200494D65 /* HomeButtomState.swift in Sources */,
+				2BC662A32498B42C00494D65 /* RecordingDurationOption.swift in Sources */,
+				2BC662992497EDFB00494D65 /* HomeViewModel.swift in Sources */,
+				2BC662B12498BBB200494D65 /* Int+Time.swift in Sources */,
+				2BC662AB2498B69900494D65 /* Observer.swift in Sources */,
+				2BC662AE2498B88C00494D65 /* HomeRows.swift in Sources */,
+				2BC6629A2497EDFB00494D65 /* HomeConfigurator.swift in Sources */,
+				2BC6629C2498B0E300494D65 /* STStoryboards.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,12 +353,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		2BA2DF1D2497E6EC009ED027 /* Main.storyboard */ = {
+		2BA2DF1D2497E6EC009ED027 /* Home.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				2BA2DF1E2497E6EC009ED027 /* Base */,
 			);
-			name = Main.storyboard;
+			name = Home.storyboard;
 			sourceTree = "<group>";
 		};
 		2BA2DF222497E6EF009ED027 /* LaunchScreen.storyboard */ = {

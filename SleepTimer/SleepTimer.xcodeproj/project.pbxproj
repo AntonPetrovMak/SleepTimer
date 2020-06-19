@@ -19,6 +19,9 @@
 		2B761F99249CDFA400755933 /* RecorderUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B761F98249CDFA400755933 /* RecorderUseCase.swift */; };
 		2B761F9B249CDFB900755933 /* RecorderRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B761F9A249CDFB900755933 /* RecorderRepository.swift */; };
 		2B761F9D249CE23500755933 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B761F9C249CE23500755933 /* Constants.swift */; };
+		2B761FA1249CEA7200755933 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B761F9F249CEA7200755933 /* HomeTableViewCell.swift */; };
+		2B761FA2249CEA7200755933 /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B761FA0249CEA7200755933 /* HomeTableViewCell.xib */; };
+		2B761FA5249D0A5400755933 /* RouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B761FA4249D0A5400755933 /* RouterProtocol.swift */; };
 		2BA2DF182497E6EC009ED027 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA2DF172497E6EC009ED027 /* AppDelegate.swift */; };
 		2BA2DF1F2497E6EC009ED027 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BA2DF1D2497E6EC009ED027 /* Home.storyboard */; };
 		2BA2DF212497E6EF009ED027 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BA2DF202497E6EF009ED027 /* Assets.xcassets */; };
@@ -61,6 +64,9 @@
 		2B761F98249CDFA400755933 /* RecorderUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecorderUseCase.swift; sourceTree = "<group>"; };
 		2B761F9A249CDFB900755933 /* RecorderRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecorderRepository.swift; sourceTree = "<group>"; };
 		2B761F9C249CE23500755933 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		2B761F9F249CEA7200755933 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		2B761FA0249CEA7200755933 /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
+		2B761FA4249D0A5400755933 /* RouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterProtocol.swift; sourceTree = "<group>"; };
 		2BA2DF142497E6EC009ED027 /* SleepTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SleepTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BA2DF172497E6EC009ED027 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2BA2DF1E2497E6EC009ED027 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
@@ -129,6 +135,23 @@
 			path = Repositories;
 			sourceTree = "<group>";
 		};
+		2B761F9E249CEA4E00755933 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				2B761F9F249CEA7200755933 /* HomeTableViewCell.swift */,
+				2B761FA0249CEA7200755933 /* HomeTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		2B761FA3249D0A3B00755933 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				2B761FA4249D0A5400755933 /* RouterProtocol.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 		2BA2DF0B2497E6EC009ED027 = {
 			isa = PBXGroup;
 			children = (
@@ -181,7 +204,7 @@
 		2BA2DF3B2497E713009ED027 /* PresentationLayer */ = {
 			isa = PBXGroup;
 			children = (
-				2BC662AA2498B69900494D65 /* Observer.swift */,
+				2B761FA3249D0A3B00755933 /* Base */,
 				2BC662AF2498BBA000494D65 /* Extensions */,
 				2BC662922497EA9300494D65 /* Home */,
 				2B761F85249CCA8000755933 /* PrettyPresentaion.swift */,
@@ -203,6 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				2B761F9C249CE23500755933 /* Constants.swift */,
+				2BC662AA2498B69900494D65 /* Observer.swift */,
 				2B761F93249CDE2000755933 /* Repositories */,
 			);
 			path = DataLayer;
@@ -221,6 +245,7 @@
 		2BC662922497EA9300494D65 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				2B761F9E249CEA4E00755933 /* Cells */,
 				2BC662AC2498B88200494D65 /* Models */,
 				2BC662932497EDFB00494D65 /* HomeRouter.swift */,
 				2BC662942497EDFB00494D65 /* HomeViewController.swift */,
@@ -360,6 +385,7 @@
 			files = (
 				2BA2DF242497E6EF009ED027 /* LaunchScreen.storyboard in Resources */,
 				2BA2DF212497E6EF009ED027 /* Assets.xcassets in Resources */,
+				2B761FA2249CEA7200755933 /* HomeTableViewCell.xib in Resources */,
 				2BA2DF1F2497E6EC009ED027 /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -380,12 +406,14 @@
 			files = (
 				2B761F9D249CE23500755933 /* Constants.swift in Sources */,
 				2B761F92249CCBAD00755933 /* PlayerRepositoryProtocol.swift in Sources */,
+				2B761FA1249CEA7200755933 /* HomeTableViewCell.swift in Sources */,
 				2BA2DF182497E6EC009ED027 /* AppDelegate.swift in Sources */,
 				2BC662A12498B2D900494D65 /* SoundTimerOption.swift in Sources */,
 				2B761F84249CCA6500755933 /* SoundTimerOption+Pretty.swift in Sources */,
 				2B761F97249CDED100755933 /* RecorderRepositoryProtocol.swift in Sources */,
 				2BC662A52498B5E000494D65 /* HomeAppState.swift in Sources */,
 				2BC662972497EDFB00494D65 /* HomeRouter.swift in Sources */,
+				2B761FA5249D0A5400755933 /* RouterProtocol.swift in Sources */,
 				2B761F8A249CCAEE00755933 /* HomeAppState+Pretty.swift in Sources */,
 				2BC662982497EDFB00494D65 /* HomeViewController.swift in Sources */,
 				2BC662A72498B5F200494D65 /* HomeButtomState.swift in Sources */,

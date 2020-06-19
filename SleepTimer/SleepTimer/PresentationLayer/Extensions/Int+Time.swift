@@ -10,10 +10,13 @@ import Foundation
 
 extension Int {
   var timeDetection: String {
-    var dimension = "min"
     if self >= 60 {
-      dimension = self == 60 ? "hour" : "hours"
+      if self == 60 {
+        return "1 hour"
+      } else {
+        return "\(self / 60) hours"
+      }
     }
-    return "\(self) \(dimension)"
+    return "\(self) min"
   }
 }

@@ -11,12 +11,11 @@
 import Foundation
 
 protocol HomeViewModelInput {
-  func openSoundTimerOptions()
-  func openRecordingDurationOptions()
   func didSelectHomeButton()
 }
 
 protocol HomeViewModelOutput {
+  var isEnableOptions: Observable<Bool> { get }
   var appStateTitle: Observable<String> { get }
   var homeButtonTitle: Observable<String> { get }
   var reloadRows: ObservableEmpty { get }
@@ -27,7 +26,7 @@ protocol HomeViewModelProtocol: HomeViewModelInput, HomeViewModelOutput  { }
 
 final class HomeViewModel: HomeViewModelProtocol {
   
-  private let router: HomeRouterProtocol
+  fileprivate let router: HomeRouterProtocol
   private let playerUseCase: PlayerUseCaseProtocol
   private let recorderUseCase: RecorderUseCaseProtocol
   
@@ -37,6 +36,8 @@ final class HomeViewModel: HomeViewModelProtocol {
     self.router = router
     self.playerUseCase = playerUseCase
     self.recorderUseCase = recorderUseCase
+    soundTimerOption.observe(on: self, observerBlock: { _ in self.reloadRows.notify() })
+    recordingDurationOption.observe(on: self, observerBlock: { _ in self.reloadRows.notify() })
   }
   
   private var appState = HomeAppState.idle {
@@ -51,34 +52,32 @@ final class HomeViewModel: HomeViewModelProtocol {
     }
   }
   
+  fileprivate let soundTimerOption = Observable(SoundTimerOption.default)
+  fileprivate var recordingDurationOption = Observable(RecordingDurationOption.default)
+  
   // MARK: MoviesListViewModelOutput
   
   var reloadRows = ObservableEmpty()
   
-  var rows: [HomeRows] = {
-    let defaultSoundTimer = SoundTimerOption.default
-    let defaultRecordingDuration = RecordingDurationOption.default
-    return [HomeRows.soundTimer(value: defaultSoundTimer.prettyValue),
-            HomeRows.recordingDuration(value: defaultRecordingDuration.prettyValue)]
-  }()
+  var isEnableOptions = Observable(true)
   
-  var appStateTitle: Observable<String> = {
+  var rows: [HomeRows] {
+    let soundTimerRow = HomeRows.soundTimer(value: soundTimerOption.value.prettyValue,
+                                            didSelect: self.openSoundTimerOptions)
+    let recordingDurationRow = HomeRows.recordingDuration(value: recordingDurationOption.value.prettyValue,
+                                                          didSelect: self.openRecordingDurationOptions)
+    return [soundTimerRow, recordingDurationRow]
+  }
+  
+  lazy var appStateTitle: Observable<String> = {
     return Observable(HomeAppState.idle.prettyValue)
   }()
   
-  var homeButtonTitle: Observable<String> = {
+  lazy var homeButtonTitle: Observable<String> = {
     Observable(HomeButtomState.play.prettyValue)
   }()
   
   // MARK: MoviesListViewModelInput
-  
-  func openSoundTimerOptions() {
-    
-  }
-  
-  func openRecordingDurationOptions() {
-    
-  }
   
   func didSelectHomeButton() {
     checkAppState()
@@ -90,23 +89,52 @@ final class HomeViewModel: HomeViewModelProtocol {
 private typealias Private = HomeViewModel
 private extension Private {
   
+  func openSoundTimerOptions() {
+    router.present(message: "Sound Timer", value: soundTimerOption, ranges: SoundTimerOption.defaultRange)
+  }
+  
+  func openRecordingDurationOptions() {
+    router.present(message: "Recording Duration", value: recordingDurationOption, ranges: RecordingDurationOption.defaultRange)
+  }
+  
   func checkAppState() {
     switch appState {
     case .idle:
       appState = .playing
       homeButtonState = .pause
-      
+      isEnableOptions.value = false
+//      playerUseCase.playSound(soundTimer: soundTimerOption.value) { result in
+//        switch result {
+//        case .success:
+//          self.appState = .recording
+//          self.checkAppState()
+//        case .failure(let error):
+//          self.router.showError(message: error.localizedDescription)
+//        }
+//      }
     case .paused:
       appState = .playing
       homeButtonState = .pause
+      isEnableOptions.value = false
       
     case .playing:
       appState = .paused
       homeButtonState = .play
+      isEnableOptions.value = true
       
     case .recording:
       appState = .idle
       homeButtonState = .play
+      isEnableOptions.value = true
+//      recorderUseCase.startRecord(durationOption: recordingDurationOption.value) { result in
+//        switch result {
+//        case .success:
+//          self.appState = .idle
+//          self.checkAppState()
+//        case .failure(let error):
+//          self.router.showError(message: error.localizedDescription)
+//        }
+//      }
     }
   }
   

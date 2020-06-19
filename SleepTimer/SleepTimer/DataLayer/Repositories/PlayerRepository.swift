@@ -22,10 +22,14 @@ struct PlayerRepository: PlayerRepositoryProtocol {
 
 struct PlayerMockRepository: PlayerRepositoryProtocol {
   func playSound(soundTimer: SoundTimerOption, completion: @escaping (Result<Void, Error>) -> Void) {
-    completion(.success(()))
+    DispatchQueue.global().asyncAfter(deadline: .now() + Double(soundTimer.minutes)) {
+      DispatchQueue.main.async {
+        completion(.success(()))
+      }
+    }
   }
   
   func pauseSound(completion: @escaping (Result<Void, Error>) -> Void) {
-    completion(.success(()))
+    
   }
 }

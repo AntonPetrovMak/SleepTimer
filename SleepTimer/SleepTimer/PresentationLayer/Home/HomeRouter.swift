@@ -10,42 +10,31 @@
 
 import UIKit
 
-protocol HomeRouterProtocol {
-  
+protocol HomeRouterProtocol: RouterProtocol {
+  func present<T: PrettyEnumValue>(message: String, value: Observable<T>, ranges: [T])
 }
 
 class HomeRouter: HomeRouterProtocol {
-  
-  enum Context {
-    case setup
-  }
-  
+
   weak var baseViewController: UIViewController?
   
-  func present(on baseVC: UIViewController, animated: Bool, context: Any?, completion: ((Bool) -> Void)?) {
-    guard let context = context as? Context else { return }
-    baseViewController = baseVC
-    
-    switch context {
-    case .setup:
-      let viewController = HomeConfigurator.default(router: self)
-      baseVC.navigationController?.pushViewController(viewController, animated: true)
+  func present<T: PrettyEnumValue>(message: String, value: Observable<T>, ranges: [T]) {
+    guard let baseViewController = baseViewController else { return }
+    let alertController = UIAlertController(title: nil, message: message, preferredStyle: .actionSheet)
+    ranges.forEach { range in
+      let action = UIAlertAction(title: range.prettyValue, style: .default) { _ in
+        value.value = range
+        alertController.dismiss(animated: true)
+      }
+      alertController.addAction(action)
     }
     
-  }
-  
-  func route(with context: Any?, animated: Bool, completion: ((Bool) -> Void)?) {
-    //    guard let context = context as? Context else { return }
-    //    guard let baseViewController = baseViewController else { return }
+    let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { _ in
+      alertController.dismiss(animated: true)
+    }
+    alertController.addAction(cancelAction)
     
-    // TODO: exemple how to do route to some next module
-    //    let context = SomeRouter.Context.someContext
-    //    let someRouter = SomeRouter()
-    //    someRouter.present(on: baseViewController, animated: true, context: context)
-  }
-  
-  func dismiss(animated: Bool, context: Any?, completion: ((Bool) -> Void)?) {
-    
+    baseViewController.present(alertController, animated: true)
   }
   
 }

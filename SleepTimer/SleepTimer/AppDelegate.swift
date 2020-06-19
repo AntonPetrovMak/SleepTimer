@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     window = UIWindow(frame: UIScreen.main.bounds)
     let router = HomeRouter()
     let homeViewController = HomeConfigurator.fromStoryboard(router: router)
+    router.baseViewController = homeViewController
     window?.rootViewController = homeViewController
     window?.makeKeyAndVisible()
     

@@ -52,19 +52,73 @@ private extension DataBinding {
     viewModel.reloadRows.observeWithStartingValue(on: self) { [weak self] in
       self?.optionsTableView.reloadData()
     }
+    
+    viewModel.isEnableOptions.observe(on: self) { [weak self] (isEnable) in
+      self?.optionsTableView.isUserInteractionEnabled = isEnable
+      self?.optionsTableView.alpha = isEnable ? 1 : 0.5
+    }
   }
 }
 
-// MARK: - Private
+// MARK: - Fileprivate
 
-private typealias UISetups = HomeViewController
-private extension UISetups {
+fileprivate typealias UISetups = HomeViewController
+fileprivate extension UISetups {
   func setupUI() {
     homeButton.addTarget(self, action: #selector(didSelectHomeButton), for: .touchUpInside)
     setupTableView()
   }
   
   func setupTableView() {
-    
+    optionsTableView.dataSource = self
+    optionsTableView.delegate = self
+    optionsTableView.registerCellNib(HomeTableViewCell.self)
   }
+  
+  func cellViewModel(by indexPath: IndexPath) -> HomeRows {
+    return viewModel.rows[indexPath.row]
+  }
+}
+
+// MARK: - UITableViewDataSource
+
+extension HomeViewController: UITableViewDataSource {
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return viewModel.rows.count
+  }
+  
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCell(cellClass: HomeTableViewCell.self, forIndexPath: indexPath)
+    let cellViewModel = self.cellViewModel(by: indexPath)
+    cell.setViewModel(cellViewModel)
+    return cell
+  }
+  
+}
+
+extension HomeViewController: UITableViewDelegate {
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    tableView.deselectRow(at: indexPath, animated: true)
+    let cellViewModel = self.cellViewModel(by: indexPath)
+    cellViewModel.didSelect()
+  }
+}
+
+private extension UITableView {
+  
+  func registerCellNib<T: UITableViewCell>(_ cellClass: T.Type) {
+    let nib = UINib(nibName: String(describing: cellClass.self), bundle: nil)
+    register(nib, forCellReuseIdentifier: String(describing: cellClass.self))
+  }
+  
+  func registerCell<T: UITableViewCell>(_ cellClass: T.Type) {
+    register(cellClass, forCellReuseIdentifier: String(describing: cellClass.self))
+  }
+  
+  
+  func dequeueReusableCell<T: UITableViewCell>(cellClass: T.Type, forIndexPath indexPath: IndexPath) -> T {
+    return dequeueReusableCell(withIdentifier: String(describing: cellClass.self),
+                               for: indexPath) as! T
+  }
+  
 }

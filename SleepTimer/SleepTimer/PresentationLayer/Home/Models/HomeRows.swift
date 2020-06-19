@@ -8,14 +8,9 @@
 
 import Foundation
 
-protocol KeyValueViewModelProtocol {
-  var title: String { get }
-  var value: String { get }
-}
-
 enum HomeRows {
-  case soundTimer(value: String)
-  case recordingDuration(value: String)
+  case soundTimer(value: String, didSelect: () -> Void)
+  case recordingDuration(value: String, didSelect: () -> Void)
 }
 
 // MARK: - KeyValueViewModelProtocol
@@ -30,8 +25,15 @@ extension HomeRows: KeyValueViewModelProtocol {
   
   var value: String {
     switch self {
-    case .soundTimer(let value):        return value
-    case .recordingDuration(let value): return value
+    case let .soundTimer(value, _):        return value
+    case let .recordingDuration(value, _): return value
+    }
+  }
+  
+  var didSelect: () -> Void {
+    switch self {
+    case let .soundTimer(_, block):        return block
+    case let .recordingDuration(_, block): return block
     }
   }
 }

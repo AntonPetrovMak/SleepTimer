@@ -25,13 +25,13 @@ enum RecordingDurationOption {
 // MARK: - Defaults
 
 extension RecordingDurationOption {
-  static let `default` = SoundTimerOption.timer(60 * 2)
+  static let `default` = RecordingDurationOption.timer(60 * 2)
   
-  static let defaultRange: [SoundTimerOption] = [.off,
-                                                 .timer(5),
-                                                 .timer(60),
-                                                 .timer(60 * 2),
-                                                 .timer(60 * 3),
-                                                 .timer(60 * 4),
-                                                 .timer(60 * 6)]
+  static let defaultRange: [RecordingDurationOption] = [.off,
+                                                        .timer(5),
+                                                        .timer(60),
+                                                        .timer(60 * 2),
+                                                        .timer(60 * 3),
+                                                        .timer(60 * 4),
+                                                        .timer(60 * 6)]
 }

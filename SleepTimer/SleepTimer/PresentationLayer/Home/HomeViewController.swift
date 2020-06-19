@@ -41,11 +41,11 @@ private extension Actions {
 private typealias DataBinding = HomeViewController
 private extension DataBinding {
   func bind(_ viewModel: HomeViewModelProtocol) {
-    viewModel.appState.observeWithStartingValue(on: self) { [weak self] value in
+    viewModel.appStateTitle.observeWithStartingValue(on: self) { [weak self] value in
       self?.appStateLabel.text = value
     }
     
-    viewModel.homeButtonState.observeWithStartingValue(on: self) { [weak self] value in
+    viewModel.homeButtonTitle.observeWithStartingValue(on: self) { [weak self] value in
       self?.homeButton.setTitle(value, for: .normal)
     }
     

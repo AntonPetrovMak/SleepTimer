@@ -17,20 +17,38 @@ protocol HomeViewModelInput {
 }
 
 protocol HomeViewModelOutput {
-  var appState: Observable<String> { get }
-  var homeButtonState: Observable<String> { get }
+  var appStateTitle: Observable<String> { get }
+  var homeButtonTitle: Observable<String> { get }
   var reloadRows: ObservableEmpty { get }
   var rows: [HomeRows] { get }
 }
 
 protocol HomeViewModelProtocol: HomeViewModelInput, HomeViewModelOutput  { }
 
-class HomeViewModel: HomeViewModelProtocol {
+final class HomeViewModel: HomeViewModelProtocol {
   
-  var router: HomeRouterProtocol
+  private let router: HomeRouterProtocol
+  private let playerUseCase: PlayerUseCaseProtocol
+  private let recorderUseCase: RecorderUseCaseProtocol
   
-  init(router: HomeRouterProtocol) {
+  init(router: HomeRouterProtocol,
+       playerUseCase: PlayerUseCaseProtocol,
+       recorderUseCase: RecorderUseCaseProtocol) {
     self.router = router
+    self.playerUseCase = playerUseCase
+    self.recorderUseCase = recorderUseCase
+  }
+  
+  private var appState = HomeAppState.idle {
+    didSet {
+      appStateTitle.value = appState.prettyValue
+    }
+  }
+  
+  private var homeButtonState = HomeButtomState.play {
+    didSet {
+      homeButtonTitle.value = homeButtonState.prettyValue
+    }
   }
   
   // MARK: MoviesListViewModelOutput
@@ -44,11 +62,11 @@ class HomeViewModel: HomeViewModelProtocol {
             HomeRows.recordingDuration(value: defaultRecordingDuration.prettyValue)]
   }()
   
-  var appState: Observable<String> = {
+  var appStateTitle: Observable<String> = {
     return Observable(HomeAppState.idle.prettyValue)
   }()
   
-  var homeButtonState: Observable<String> = {
+  var homeButtonTitle: Observable<String> = {
     Observable(HomeButtomState.play.prettyValue)
   }()
   
@@ -63,7 +81,7 @@ class HomeViewModel: HomeViewModelProtocol {
   }
   
   func didSelectHomeButton() {
-    
+    checkAppState()
   }
 }
 
@@ -71,6 +89,26 @@ class HomeViewModel: HomeViewModelProtocol {
 
 private typealias Private = HomeViewModel
 private extension Private {
+  
+  func checkAppState() {
+    switch appState {
+    case .idle:
+      appState = .playing
+      homeButtonState = .pause
+      
+    case .paused:
+      appState = .playing
+      homeButtonState = .pause
+      
+    case .playing:
+      appState = .paused
+      homeButtonState = .play
+      
+    case .recording:
+      appState = .idle
+      homeButtonState = .play
+    }
+  }
   
 }
 

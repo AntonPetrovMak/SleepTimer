@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct RecorderRepository {
+struct RecorderRepository: RecorderRepositoryProtocol {
   func startRecord(durationOption: RecordingDurationOption, completion: @escaping (Result<Void, Error>) -> Void) {
     
   }
@@ -18,7 +18,9 @@ struct RecorderRepository {
   }
 }
 
-struct RecorderMockRepository {
+// MARK: - Mock Repository
+
+struct RecorderMockRepository: RecorderRepositoryProtocol {
   func startRecord(durationOption: RecordingDurationOption, completion: @escaping (Result<Void, Error>) -> Void) {
     completion(.success(()))
   }

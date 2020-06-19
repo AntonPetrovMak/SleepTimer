@@ -18,6 +18,7 @@
 		2B761F97249CDED100755933 /* RecorderRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B761F96249CDED100755933 /* RecorderRepositoryProtocol.swift */; };
 		2B761F99249CDFA400755933 /* RecorderUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B761F98249CDFA400755933 /* RecorderUseCase.swift */; };
 		2B761F9B249CDFB900755933 /* RecorderRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B761F9A249CDFB900755933 /* RecorderRepository.swift */; };
+		2B761F9D249CE23500755933 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B761F9C249CE23500755933 /* Constants.swift */; };
 		2BA2DF182497E6EC009ED027 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA2DF172497E6EC009ED027 /* AppDelegate.swift */; };
 		2BA2DF1F2497E6EC009ED027 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BA2DF1D2497E6EC009ED027 /* Home.storyboard */; };
 		2BA2DF212497E6EF009ED027 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BA2DF202497E6EF009ED027 /* Assets.xcassets */; };
@@ -59,6 +60,7 @@
 		2B761F96249CDED100755933 /* RecorderRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecorderRepositoryProtocol.swift; sourceTree = "<group>"; };
 		2B761F98249CDFA400755933 /* RecorderUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecorderUseCase.swift; sourceTree = "<group>"; };
 		2B761F9A249CDFB900755933 /* RecorderRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecorderRepository.swift; sourceTree = "<group>"; };
+		2B761F9C249CE23500755933 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2BA2DF142497E6EC009ED027 /* SleepTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SleepTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BA2DF172497E6EC009ED027 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2BA2DF1E2497E6EC009ED027 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 		2BA2DF3D2497E744009ED027 /* DataLayer */ = {
 			isa = PBXGroup;
 			children = (
+				2B761F9C249CE23500755933 /* Constants.swift */,
 				2B761F93249CDE2000755933 /* Repositories */,
 			);
 			path = DataLayer;
@@ -375,6 +378,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B761F9D249CE23500755933 /* Constants.swift in Sources */,
 				2B761F92249CCBAD00755933 /* PlayerRepositoryProtocol.swift in Sources */,
 				2BA2DF182497E6EC009ED027 /* AppDelegate.swift in Sources */,
 				2BC662A12498B2D900494D65 /* SoundTimerOption.swift in Sources */,

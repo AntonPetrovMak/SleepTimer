@@ -35,16 +35,3 @@ extension RecordingDurationOption {
                                                  .timer(60 * 4),
                                                  .timer(60 * 6)]
 }
-
-// MARK: - PrettyPresentaion
-
-extension RecordingDurationOption: PrettyPresentaion {
-  var prettyValue: String {
-    switch self {
-    case .off:
-      return "Off"
-    case .timer(let value):
-      return value.timeDetection
-    }
-  }
-}

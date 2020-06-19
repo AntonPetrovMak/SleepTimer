@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B761F84249CCA6500755933 /* SoundTimerOption+Pretty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B761F83249CCA6500755933 /* SoundTimerOption+Pretty.swift */; };
+		2B761F86249CCA8000755933 /* PrettyPresentaion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B761F85249CCA8000755933 /* PrettyPresentaion.swift */; };
+		2B761F88249CCAC200755933 /* RecordingDurationOption+Pretty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B761F87249CCAC200755933 /* RecordingDurationOption+Pretty.swift */; };
+		2B761F8A249CCAEE00755933 /* HomeAppState+Pretty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B761F89249CCAEE00755933 /* HomeAppState+Pretty.swift */; };
+		2B761F8C249CCB4000755933 /* HomeButtomState+Pretty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B761F8B249CCB4000755933 /* HomeButtomState+Pretty.swift */; };
+		2B761F90249CCB9C00755933 /* PlayerUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B761F8F249CCB9C00755933 /* PlayerUseCase.swift */; };
+		2B761F92249CCBAD00755933 /* PlayerRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B761F91249CCBAD00755933 /* PlayerRepositoryProtocol.swift */; };
+		2B761F95249CDE2D00755933 /* PlayerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B761F94249CDE2D00755933 /* PlayerRepository.swift */; };
+		2B761F97249CDED100755933 /* RecorderRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B761F96249CDED100755933 /* RecorderRepositoryProtocol.swift */; };
+		2B761F99249CDFA400755933 /* RecorderUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B761F98249CDFA400755933 /* RecorderUseCase.swift */; };
+		2B761F9B249CDFB900755933 /* RecorderRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B761F9A249CDFB900755933 /* RecorderRepository.swift */; };
 		2BA2DF182497E6EC009ED027 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA2DF172497E6EC009ED027 /* AppDelegate.swift */; };
 		2BA2DF1F2497E6EC009ED027 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BA2DF1D2497E6EC009ED027 /* Home.storyboard */; };
 		2BA2DF212497E6EF009ED027 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BA2DF202497E6EF009ED027 /* Assets.xcassets */; };
@@ -37,6 +48,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2B761F83249CCA6500755933 /* SoundTimerOption+Pretty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SoundTimerOption+Pretty.swift"; sourceTree = "<group>"; };
+		2B761F85249CCA8000755933 /* PrettyPresentaion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrettyPresentaion.swift; sourceTree = "<group>"; };
+		2B761F87249CCAC200755933 /* RecordingDurationOption+Pretty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecordingDurationOption+Pretty.swift"; sourceTree = "<group>"; };
+		2B761F89249CCAEE00755933 /* HomeAppState+Pretty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeAppState+Pretty.swift"; sourceTree = "<group>"; };
+		2B761F8B249CCB4000755933 /* HomeButtomState+Pretty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeButtomState+Pretty.swift"; sourceTree = "<group>"; };
+		2B761F8F249CCB9C00755933 /* PlayerUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerUseCase.swift; sourceTree = "<group>"; };
+		2B761F91249CCBAD00755933 /* PlayerRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerRepositoryProtocol.swift; sourceTree = "<group>"; };
+		2B761F94249CDE2D00755933 /* PlayerRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerRepository.swift; sourceTree = "<group>"; };
+		2B761F96249CDED100755933 /* RecorderRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecorderRepositoryProtocol.swift; sourceTree = "<group>"; };
+		2B761F98249CDFA400755933 /* RecorderUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecorderUseCase.swift; sourceTree = "<group>"; };
+		2B761F9A249CDFB900755933 /* RecorderRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecorderRepository.swift; sourceTree = "<group>"; };
 		2BA2DF142497E6EC009ED027 /* SleepTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SleepTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BA2DF172497E6EC009ED027 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2BA2DF1E2497E6EC009ED027 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
@@ -78,6 +100,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B761F8D249CCB7200755933 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				2B761F8F249CCB9C00755933 /* PlayerUseCase.swift */,
+				2B761F98249CDFA400755933 /* RecorderUseCase.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		2B761F8E249CCB7C00755933 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				2B761F91249CCBAD00755933 /* PlayerRepositoryProtocol.swift */,
+				2B761F96249CDED100755933 /* RecorderRepositoryProtocol.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		2B761F93249CDE2000755933 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				2B761F94249CDE2D00755933 /* PlayerRepository.swift */,
+				2B761F9A249CDFB900755933 /* RecorderRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
 		2BA2DF0B2497E6EC009ED027 = {
 			isa = PBXGroup;
 			children = (
@@ -130,9 +179,10 @@
 		2BA2DF3B2497E713009ED027 /* PresentationLayer */ = {
 			isa = PBXGroup;
 			children = (
-				2BC662AF2498BBA000494D65 /* Extensions */,
 				2BC662AA2498B69900494D65 /* Observer.swift */,
+				2BC662AF2498BBA000494D65 /* Extensions */,
 				2BC662922497EA9300494D65 /* Home */,
+				2B761F85249CCA8000755933 /* PrettyPresentaion.swift */,
 			);
 			path = PresentationLayer;
 			sourceTree = "<group>";
@@ -150,6 +200,7 @@
 		2BA2DF3D2497E744009ED027 /* DataLayer */ = {
 			isa = PBXGroup;
 			children = (
+				2B761F93249CDE2000755933 /* Repositories */,
 			);
 			path = DataLayer;
 			sourceTree = "<group>";
@@ -157,6 +208,8 @@
 		2BA2DF3E2497E755009ED027 /* DomainLayer */ = {
 			isa = PBXGroup;
 			children = (
+				2B761F8E249CCB7C00755933 /* Repositories */,
+				2B761F8D249CCB7200755933 /* UseCases */,
 				2BC6629F2498B29200494D65 /* Entities */,
 			);
 			path = DomainLayer;
@@ -205,6 +258,10 @@
 			isa = PBXGroup;
 			children = (
 				2BC662AD2498B88C00494D65 /* HomeRows.swift */,
+				2B761F83249CCA6500755933 /* SoundTimerOption+Pretty.swift */,
+				2B761F87249CCAC200755933 /* RecordingDurationOption+Pretty.swift */,
+				2B761F89249CCAEE00755933 /* HomeAppState+Pretty.swift */,
+				2B761F8B249CCB4000755933 /* HomeButtomState+Pretty.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -318,10 +375,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B761F92249CCBAD00755933 /* PlayerRepositoryProtocol.swift in Sources */,
 				2BA2DF182497E6EC009ED027 /* AppDelegate.swift in Sources */,
 				2BC662A12498B2D900494D65 /* SoundTimerOption.swift in Sources */,
+				2B761F84249CCA6500755933 /* SoundTimerOption+Pretty.swift in Sources */,
+				2B761F97249CDED100755933 /* RecorderRepositoryProtocol.swift in Sources */,
 				2BC662A52498B5E000494D65 /* HomeAppState.swift in Sources */,
 				2BC662972497EDFB00494D65 /* HomeRouter.swift in Sources */,
+				2B761F8A249CCAEE00755933 /* HomeAppState+Pretty.swift in Sources */,
 				2BC662982497EDFB00494D65 /* HomeViewController.swift in Sources */,
 				2BC662A72498B5F200494D65 /* HomeButtomState.swift in Sources */,
 				2BC662A32498B42C00494D65 /* RecordingDurationOption.swift in Sources */,
@@ -329,8 +390,15 @@
 				2BC662B12498BBB200494D65 /* Int+Time.swift in Sources */,
 				2BC662AB2498B69900494D65 /* Observer.swift in Sources */,
 				2BC662AE2498B88C00494D65 /* HomeRows.swift in Sources */,
+				2B761F90249CCB9C00755933 /* PlayerUseCase.swift in Sources */,
 				2BC6629A2497EDFB00494D65 /* HomeConfigurator.swift in Sources */,
+				2B761F9B249CDFB900755933 /* RecorderRepository.swift in Sources */,
+				2B761F86249CCA8000755933 /* PrettyPresentaion.swift in Sources */,
+				2B761F88249CCAC200755933 /* RecordingDurationOption+Pretty.swift in Sources */,
 				2BC6629C2498B0E300494D65 /* STStoryboards.swift in Sources */,
+				2B761F95249CDE2D00755933 /* PlayerRepository.swift in Sources */,
+				2B761F99249CDFA400755933 /* RecorderUseCase.swift in Sources */,
+				2B761F8C249CCB4000755933 /* HomeButtomState+Pretty.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

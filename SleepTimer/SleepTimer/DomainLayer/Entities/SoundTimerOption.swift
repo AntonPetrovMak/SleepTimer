@@ -34,20 +34,3 @@ extension SoundTimerOption {
                                                  .timer(15),
                                                  .timer(20)]
 }
-
-protocol PrettyPresentaion {
-  var prettyValue: String { get }
-}
-
-// MARK: - PrettyPresentaion
-
-extension SoundTimerOption: PrettyPresentaion {
-  var prettyValue: String {
-    switch self {
-    case .off:
-      return "Off"
-    case .timer(let value):
-      return value.timeDetection
-    }
-  }
-}

@@ -9,6 +9,8 @@
 import Foundation
 
 protocol PlayerRepositoryProtocol {
-  func playSound(soundTimer: SoundTimerOption, completion: @escaping (Result<Void, Error>) -> Void)
-  func pauseSound(completion: @escaping (Result<Void, Error>) -> Void)
+  func playSound(soundTimer: SoundTimerOption)
+  func pauseSound()
+  func stopSound()
+  func observeSoundDidEndPlaying(completion: (() -> Void)?)
 }

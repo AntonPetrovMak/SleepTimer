@@ -33,7 +33,7 @@
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="V6e-Je-scZ" secondAttribute="bottom" constant="17" id="3Ec-fQ-NdH"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="V6e-Je-scZ" secondAttribute="bottom" constant="17" id="3Ec-fQ-NdH"/>
                     <constraint firstItem="kfc-o1-fV1" firstAttribute="centerY" secondItem="V6e-Je-scZ" secondAttribute="centerY" id="OYN-8J-m1X"/>
                     <constraint firstItem="V6e-Je-scZ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="nK6-Yh-QFD"/>
                     <constraint firstItem="V6e-Je-scZ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="uYk-g7-s31"/>

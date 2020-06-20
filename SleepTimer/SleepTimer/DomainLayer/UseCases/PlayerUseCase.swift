@@ -9,8 +9,10 @@
 import Foundation
 
 protocol PlayerUseCaseProtocol {
-  func playSound(soundTimer: SoundTimerOption, completion: @escaping (Result<Void, Error>) -> Void)
-  func pauseSound(completion: @escaping (Result<Void, Error>) -> Void)
+  func playSound(soundTimer: SoundTimerOption)
+  func pauseSound()
+  func stopSound()
+  func observeSoundDidEndPlaying(completion: (() -> Void)?)
 }
 
 struct PlayerUseCase {
@@ -20,11 +22,19 @@ struct PlayerUseCase {
 // MARK: - PlayerUseCaseProtocol
 
 extension PlayerUseCase: PlayerUseCaseProtocol {
-  func playSound(soundTimer: SoundTimerOption, completion: @escaping (Result<Void, Error>) -> Void) {
-    repository.playSound(soundTimer: soundTimer, completion: completion)
+  func playSound(soundTimer: SoundTimerOption) {
+    repository.playSound(soundTimer: soundTimer)
   }
   
-  func pauseSound(completion: @escaping (Result<Void, Error>) -> Void) {
-    repository.pauseSound(completion: completion)
+  func pauseSound() {
+    repository.pauseSound()
+  }
+  
+  func stopSound() {
+    repository.stopSound()
+  }
+  
+  func observeSoundDidEndPlaying(completion: (() -> Void)?) {
+    repository.observeSoundDidEndPlaying(completion: completion)
   }
 }

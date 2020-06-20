@@ -72,6 +72,8 @@ fileprivate extension UISetups {
   func setupTableView() {
     optionsTableView.dataSource = self
     optionsTableView.delegate = self
+    optionsTableView.rowHeight = UITableView.automaticDimension
+    optionsTableView.estimatedRowHeight = UITableView.automaticDimension
     optionsTableView.registerCellNib(HomeTableViewCell.self)
   }
   

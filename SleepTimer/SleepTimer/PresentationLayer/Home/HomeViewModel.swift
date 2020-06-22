@@ -38,7 +38,10 @@ final class HomeViewModel: HomeViewModelProtocol {
     self.recorderUseCase = recorderUseCase
     soundTimerOption.observe(on: self, observerBlock: { _ in self.reloadRows.notify() })
     recordingDurationOption.observe(on: self, observerBlock: { _ in self.reloadRows.notify() })
-    playerUseCase.observeSoundDidEndPlaying { self.appState = .idle }
+    playerUseCase.observeSoundDidEndPlaying {
+      // TODO: perform `recorderUseCase.startRecord(:,:)`
+      self.appState = .idle
+    }
   }
   
   private var appState = HomeAppState.idle {

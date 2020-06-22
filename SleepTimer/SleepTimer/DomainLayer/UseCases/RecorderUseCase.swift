@@ -9,8 +9,10 @@
 import Foundation
 
 protocol RecorderUseCaseProtocol {
-  func startRecord(durationOption: RecordingDurationOption, completion: @escaping (Result<Void, Error>) -> Void)
-  func pauseRecord(completion: @escaping (Result<Void, Error>) -> Void)
+  func startRecord(durationOption: RecordingDurationOption)
+  func pauseRecording()
+  func stopRecording()
+  func observeRecordingDidFinish(completion: ((_ record: Any) -> Void)?)
 }
 
 struct RecorderUseCase {
@@ -20,11 +22,19 @@ struct RecorderUseCase {
 // MARK: - PlayerUseCaseProtocol
 
 extension RecorderUseCase: RecorderUseCaseProtocol {
-  func startRecord(durationOption: RecordingDurationOption, completion: @escaping (Result<Void, Error>) -> Void) {
-    repository.startRecord(durationOption: durationOption, completion: completion)
+  func startRecord(durationOption: RecordingDurationOption) {
+    
   }
   
-  func pauseRecord(completion: @escaping (Result<Void, Error>) -> Void) {
-    repository.pauseRecord(completion: completion)
+  func pauseRecording() {
+    
+  }
+  
+  func stopRecording() {
+    
+  }
+  
+  func observeRecordingDidFinish(completion: ((_ record: Any) -> Void)?) {
+    
   }
 }

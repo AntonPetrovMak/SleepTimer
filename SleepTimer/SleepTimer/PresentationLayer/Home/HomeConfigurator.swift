@@ -27,27 +27,18 @@ struct HomeConfigurator {
   // MARK: Private
   
   private static func configure(router: HomeRouterProtocol, viewController: HomeViewController) -> HomeViewController {
-    let playerUseCase = PlayerUseCase()
-    let recorderUseCase = RecorderUseCase()
-    let viewModel = HomeViewModel(router: router,
-                                  playerUseCase: playerUseCase,
-                                  recorderUseCase: recorderUseCase)
+    let viewModel = HomeViewModel(router: router)
     viewController.viewModel = viewModel
     return viewController
   }
-  
 }
 
 // MARK: - Mocking init
 
-private extension PlayerUseCase {
-  init(isMocking: Bool = STProcessInfo.isMocking) {
-    repository = isMocking ? PlayerMockRepository(): PlayerRepository()
-  }
-}
-
-private extension RecorderUseCase {
-  init(isMocking: Bool = STProcessInfo.isMocking) {
-    repository = isMocking ? RecorderMockRepository(): RecorderRepository()
+private extension HomeViewModel {
+  convenience init(router: HomeRouterProtocol, isMocking: Bool = STProcessInfo.isMocking) {
+    self.init(router: router,
+              playerRepository: isMocking ? PlayerMockRepository() : PlayerRepository(),
+              recorderRepository: isMocking ? RecorderMockRepository() : RecorderRepository())
   }
 }

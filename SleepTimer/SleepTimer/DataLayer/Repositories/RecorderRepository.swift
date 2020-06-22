@@ -9,11 +9,19 @@
 import Foundation
 
 struct RecorderRepository: RecorderRepositoryProtocol {
-  func startRecord(durationOption: RecordingDurationOption, completion: @escaping (Result<Void, Error>) -> Void) {
+  func startRecord(durationOption: RecordingDurationOption) {
     
   }
   
-  func pauseRecord(completion: @escaping (Result<Void, Error>) -> Void) {
+  func pauseRecording() {
+    
+  }
+  
+  func stopRecording() {
+    
+  }
+  
+  func observeRecordingDidFinish(completion: ((_ record: Any) -> Void)?) {
     
   }
 }
@@ -21,11 +29,19 @@ struct RecorderRepository: RecorderRepositoryProtocol {
 // MARK: - Mock Repository
 
 struct RecorderMockRepository: RecorderRepositoryProtocol {
-  func startRecord(durationOption: RecordingDurationOption, completion: @escaping (Result<Void, Error>) -> Void) {
-    completion(.success(()))
+  func startRecord(durationOption: RecordingDurationOption) {
+    
   }
   
-  func pauseRecord(completion: @escaping (Result<Void, Error>) -> Void) {
-    completion(.success(()))
+  func pauseRecording() {
+    
+  }
+  
+  func stopRecording() {
+    
+  }
+  
+  func observeRecordingDidFinish(completion: ((_ record: Any) -> Void)?) {
+    
   }
 }

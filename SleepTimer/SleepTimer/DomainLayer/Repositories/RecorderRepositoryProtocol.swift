@@ -9,6 +9,8 @@
 import Foundation
 
 protocol RecorderRepositoryProtocol {
-  func startRecord(durationOption: RecordingDurationOption, completion: @escaping (Result<Void, Error>) -> Void)
-  func pauseRecord(completion: @escaping (Result<Void, Error>) -> Void)
+  func startRecord(durationOption: RecordingDurationOption)
+  func pauseRecording()
+  func stopRecording()
+  func observeRecordingDidFinish(completion: ((_ record: Any) -> Void)?)
 }

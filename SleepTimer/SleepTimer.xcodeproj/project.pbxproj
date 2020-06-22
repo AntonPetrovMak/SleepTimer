@@ -23,6 +23,8 @@
 		2B761FA2249CEA7200755933 /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B761FA0249CEA7200755933 /* HomeTableViewCell.xib */; };
 		2B761FA5249D0A5400755933 /* RouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B761FA4249D0A5400755933 /* RouterProtocol.swift */; };
 		2B9DC901249E17960085032A /* nature.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 2B9DC900249E13FA0085032A /* nature.m4a */; };
+		2B9DC90324A097070085032A /* SleepTrackerUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9DC90224A097070085032A /* SleepTrackerUseCase.swift */; };
+		2B9DC90524A0A6880085032A /* SleepTrackerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9DC90424A0A6880085032A /* SleepTrackerState.swift */; };
 		2BA2DF182497E6EC009ED027 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA2DF172497E6EC009ED027 /* AppDelegate.swift */; };
 		2BA2DF1F2497E6EC009ED027 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BA2DF1D2497E6EC009ED027 /* Home.storyboard */; };
 		2BA2DF212497E6EF009ED027 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BA2DF202497E6EF009ED027 /* Assets.xcassets */; };
@@ -69,6 +71,8 @@
 		2B761FA0249CEA7200755933 /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
 		2B761FA4249D0A5400755933 /* RouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterProtocol.swift; sourceTree = "<group>"; };
 		2B9DC900249E13FA0085032A /* nature.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = nature.m4a; sourceTree = "<group>"; };
+		2B9DC90224A097070085032A /* SleepTrackerUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepTrackerUseCase.swift; sourceTree = "<group>"; };
+		2B9DC90424A0A6880085032A /* SleepTrackerState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepTrackerState.swift; sourceTree = "<group>"; };
 		2BA2DF142497E6EC009ED027 /* SleepTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SleepTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BA2DF172497E6EC009ED027 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2BA2DF1E2497E6EC009ED027 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
@@ -115,6 +119,7 @@
 			children = (
 				2B761F8F249CCB9C00755933 /* PlayerUseCase.swift */,
 				2B761F98249CDFA400755933 /* RecorderUseCase.swift */,
+				2B9DC90224A097070085032A /* SleepTrackerUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -281,6 +286,7 @@
 				2BC662A22498B42C00494D65 /* RecordingDurationOption.swift */,
 				2BC662A42498B5E000494D65 /* HomeAppState.swift */,
 				2BC662A62498B5F200494D65 /* HomeButtomState.swift */,
+				2B9DC90424A0A6880085032A /* SleepTrackerState.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -434,6 +440,8 @@
 				2BC6629C2498B0E300494D65 /* STStoryboards.swift in Sources */,
 				2B761F95249CDE2D00755933 /* PlayerRepository.swift in Sources */,
 				2B761F99249CDFA400755933 /* RecorderUseCase.swift in Sources */,
+				2B9DC90524A0A6880085032A /* SleepTrackerState.swift in Sources */,
+				2B9DC90324A097070085032A /* SleepTrackerUseCase.swift in Sources */,
 				2B761F8C249CCB4000755933 /* HomeButtomState+Pretty.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

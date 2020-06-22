@@ -27,26 +27,24 @@ protocol HomeViewModelProtocol: HomeViewModelInput, HomeViewModelOutput  { }
 final class HomeViewModel: HomeViewModelProtocol {
   
   fileprivate let router: HomeRouterProtocol
-  private let playerUseCase: PlayerUseCaseProtocol
-  private let recorderUseCase: RecorderUseCaseProtocol
+  private var sleepTracker: SleepTrackerUseCaseProtocol
   
   init(router: HomeRouterProtocol,
-       playerUseCase: PlayerUseCaseProtocol,
-       recorderUseCase: RecorderUseCaseProtocol) {
+       playerRepository: PlayerRepositoryProtocol,
+       recorderRepository: RecorderRepositoryProtocol) {
     self.router = router
-    self.playerUseCase = playerUseCase
-    self.recorderUseCase = recorderUseCase
+    self.sleepTracker = SleepTrackerUseCase(soundTimer: soundTimerOption,
+                                            recordingDuration: recordingDurationOption,
+                                            playerRepository: playerRepository,
+                                            recorderRepository: recorderRepository)
+    self.sleepTracker.delegate = self
     soundTimerOption.observe(on: self, observerBlock: { _ in self.reloadRows.notify() })
     recordingDurationOption.observe(on: self, observerBlock: { _ in self.reloadRows.notify() })
-    playerUseCase.observeSoundDidEndPlaying {
-      // TODO: perform `recorderUseCase.startRecord(:,:)`
-      self.appState = .idle
-    }
   }
   
-  private var appState = HomeAppState.idle {
+  private var homeAppState = HomeAppState.idle {
     didSet {
-      setupUIStatus(by: appState)
+      setupUIStatus(by: homeAppState)
     }
   }
   
@@ -69,28 +67,17 @@ final class HomeViewModel: HomeViewModelProtocol {
     return [soundTimerRow, recordingDurationRow]
   }
   
-  lazy var appStateTitle: Observable<String> = {
-    return Observable(HomeAppState.idle.prettyValue)
-  }()
-  
-  lazy var homeButtonTitle: Observable<String> = {
-    Observable(HomeButtomState.play.prettyValue)
-  }()
+  var appStateTitle = Observable(HomeAppState.idle.prettyValue)
+  var homeButtonTitle = Observable(HomeButtomState.play.prettyValue)
   
   // MARK: MoviesListViewModelInput
   
   func didSelectHomeButton() {
-    switch (appState, homeButtonState) {
-    case (.idle, .play), (.paused, .play):
-      self.appState = .playing
-      playerUseCase.playSound(soundTimer: soundTimerOption.value)
-    case (.playing, .pause):
-      self.appState = .paused
-      playerUseCase.pauseSound()
-    case (.recording, .pause): ()
-      // in progress
-    case (.recording, .play): ()
-      // in progress
+    switch (homeAppState, homeButtonState) {
+    case (.idle, .play), (.paused, .play), (.recording, .play):
+      sleepTracker.play()
+    case (.playing, .pause), (.recording, .pause):
+      sleepTracker.pause()
     default: ()
     }
   }
@@ -100,6 +87,16 @@ final class HomeViewModel: HomeViewModelProtocol {
 
 private typealias Private = HomeViewModel
 private extension Private {
+  
+  func interpretToAppStatus(_ status: SleepTrackerState) -> HomeAppState {
+    switch status {
+    case .idle:             return .idle
+    case .playingSound:     return .playing
+    case .recordingSound:   return .recording
+    case .pausedRecording:  return .paused
+    case .pausedPlaying:    return .paused
+    }
+  }
   
   func openSoundTimerOptions() {
     router.present(message: "Sound Timer", value: soundTimerOption, ranges: SoundTimerOption.defaultRange)
@@ -128,4 +125,12 @@ private extension Private {
     homeButtonTitle.value = homeButtonState.prettyValue
   }
   
+}
+
+// MARK: - SleepTrackerUseCaseDelegate
+
+extension HomeViewModel: SleepTrackerUseCaseDelegate {
+  func didChangeStatus(_ status: SleepTrackerState) {
+    homeAppState = interpretToAppStatus(status)
+  }
 }

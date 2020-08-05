@@ -27,15 +27,6 @@ Audio records should be put in user **Documents** folder and be available via iT
 - provide a way to switch off recording
 - write tests
 
-### Design Example
-
-Here is an example how application might look like, but the final decision is up to you.
-
-![Design Example](image.png)
-
-### Resources
-
-[Nature Sound](nature.m4a)
 
 # P.S.
 I have spent on this project 13 hours. Current version of project is not finished and needs complete.
